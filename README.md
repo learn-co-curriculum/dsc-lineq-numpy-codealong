@@ -1,5 +1,5 @@
 
-# Solving systems of linear equations with `numpy` - code along
+# Solving Systems of Linear Equations with NumPy - Code Along
 
 ## Introduction
 
@@ -7,11 +7,11 @@ In this lesson, we shall see how to solve a system of linear equations using mat
 
 ## Objectives
 
-* Understand and describe identity matrix and its role in linear equations.
-* Calculate Inverse of a matrix in order to solve linear problems.
-* Use the Matrix algebra and Numpy skills to solve a system of linear equations.
+You will be able to:
 
-
+* Understand and describe identity matrix and its role in linear equations
+* Calculate Inverse of a matrix in order to solve linear problems
+* Use the Matrix algebra and Numpy skills to solve a system of linear equations
 
 ## Identity Matrix
 
@@ -34,7 +34,7 @@ This would be called a 3x3 Identity matrix. The `n×n` Identity matrix is ususal
 
 Identity Matrix is also called Unit Matrix or Elementary Matrix
 
-#### Dot-Product of Given Matrix and its Identity Matrix
+### Dot-Product of Given Matrix and its Identity Matrix
 
 Let's try to multiply a matrix with its identity matrix and check the output. Let's start with the co-efficient matrix from our previous problem:
 ```
@@ -124,7 +124,7 @@ np.matrix.round(A_product)
 
 So this looks more like an identity matrix that we saw earlier. The negative signs remain after rounding off as the original small values were negative. This, however, wont effect computation in any way. 
 
-### Why Do We Need an Inverse?
+## Why Do We Need an Inverse?
 
 Because with matrices we can not divide! **There is no concept of dividing by a matrix**. But we can multiply by an inverse, which achieves the same thing.
 
@@ -156,7 +156,7 @@ We can remove I (because multiplying with identity matrix doesn't change a matri
 
 And there we have it, our answer. 
 
-### Solve a System of Equations with Matrix Algebra. 
+## Solve a System of Equations with Matrix Algebra. 
 
 Now that we know everything about converting a simple real world problem into matrix format, and steps to solve the problem, let's try it out with our apples and bananas problem from very first lesson. 
 ![](ab.png)
