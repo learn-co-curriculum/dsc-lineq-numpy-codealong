@@ -3,7 +3,7 @@
 
 ## Introduction
 
-In this lesson, we shall see how to solve a system of linear equations using matrix algebra and numpy.  We shall learn about the identity matrix and inverse matrices, which have some unique properties which would be used for solution that we seek. We will discover how to create an identity matrix and also how to calculate the inverse of a matrix in Python and Numpy. 
+In this lesson, we shall see how to solve a system of linear equations using matrix algebra and numpy.  We shall learn about the identity matrix and inverse matrices, which have some unique properties which can be used to solve for unknown values in systems of linear equations. We will discover how to create an identity matrix and also how to calculate the inverse of a matrix in Python and Numpy. 
 
 ## Objectives
 
