@@ -152,7 +152,7 @@ From above , we that A . A<sup>-1</sup> = I, so:
 
 We can remove I (because multiplying with identity matrix doesn't change a matrix). so:
 
-> **X = B A-1 **
+> **X = B A<sup>-1</sup> **
 
 And there we have it, our answer. 
 
