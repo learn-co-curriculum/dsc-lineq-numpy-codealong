@@ -18,7 +18,7 @@ You will be able to:
 An identity matrix is a matrix whose dot product with another matrix $M$ equals the same matrix $M$.
 
 The identity matrix is a square matrix which contains **1s** along the major diagonal (from the top left to the bottom right), while all its other entries are **0s**. The main diagonal is highlighted in the image below.
-![](images/major-diagonal.jpeg)
+<img src="images/diagonal.png" width="250">
 
 An identity matrix with the same $(3 \times 3)$-shape is containing all 1s along this diagnoal and 0s everywhere else as shown below:
 
