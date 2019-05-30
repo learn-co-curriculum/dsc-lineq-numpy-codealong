@@ -20,7 +20,7 @@ An identity matrix is a matrix whose dot product with another matrix $M$ equals 
 The identity matrix is a square matrix which contains **1s** along the major diagonal (from the top left to the bottom right), while all its other entries are **0s**. The main diagonal is highlighted in the image below.
 <img src="images/diagonal.png" width="250">
 
-An identity matrix with the same $(3 \times 3)$-shape is containing all 1s along this diagnoal and 0s everywhere else as shown below:
+An identity matrix with the same $(3 \times 3)$-shape is containing all 1s along this diagonal and 0s everywhere else as shown below:
 
 $$
   \left[ {\begin{array}{ccc}
@@ -31,7 +31,7 @@ $$
 $$
 
 
-This would be called a $(3 \times 3)$ Identity matrix. The $(n \times n)$ Identity matrix is ususally denoted by $I_n$ which is a matrix with $n$ rows and $n$ columns. Other examples include $(2 \times 2)$, $(4 \times 4)$ Identity matrices, etc. 
+This would be called a $(3 \times 3)$ Identity matrix. The $(n \times n)$ Identity matrix is usually denoted by $I_n$ which is a matrix with $n$ rows and $n$ columns. Other examples include $(2 \times 2)$, $(4 \times 4)$ Identity matrices, etc. 
 
 
 The identity Matrix is also called the Unit Matrix or Elementary Matrix.
@@ -93,7 +93,7 @@ The *Inverse* of a square matrix *A*, sometimes called a *reciprocal matrix*, is
 
 where $I$ is the Identity matrix. 
 
-The inverse of a matrix is analogous to taking reciprocal of a number and multiplying by itself to get a 1, e.g. $5 * 5^{-1} = 1$. Let's see how to get inverse of a matrix in numpy. `numpy.linalg.inv(a)` takes in a matrix a and calculates its inverse as shown below.
+The inverse of a matrix is analogous to taking reciprocal of a number and multiplying by itself to get a 1, e.g. $5 * 5^{-1} = 1$. Let's see how to get inverse of a matrix in Numpy. `numpy.linalg.inv(a)` takes in a matrix a and calculates its inverse as shown below.
 
 ```python
 A = np.array([[4,2,1],[4,8,3],[1,1,0]])
