@@ -149,15 +149,15 @@ Say you want to find matrix $X$, when you already know matrix $A$ and $B$:
 
 It would've been great if you could divide both sides by $A$ to get $X = B / A$, but remember that you can't divide. You can obtain this if you multiply both sides by $A^{-1}$, as shown below:
 
-> $X \cdot A \cdot A^{-1} = B \cdot A^{-1}$
+> $ A^{-1} \cdot A \cdot X = A^{-1} \cdot B$
 
 From above , we that A . A<sup>-1</sup> = I, so:
 
-> $X \cdot I = B \cdot A^{-1}$
+> $I \cdot X = A^{-1} \cdot B$
 
 We can remove I (because multiplying with identity matrix doesn't change a matrix). so:
 
-> $X = B \cdot A^{-1}$
+> $X = A^{-1} \cdot B$
 
 And there we have it, our answer. 
 
