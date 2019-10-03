@@ -93,7 +93,7 @@ The *Inverse* of a square matrix *A*, sometimes called a *reciprocal matrix*, is
 
 where $I$ is the Identity matrix. 
 
-The inverse of a matrix is analogous to taking reciprocal of a number and multiplying by itself to get a 1, e.g. $5 * 5^{-1} = 1$. Let's see how to get inverse of a matrix in Numpy. `numpy.linalg.inv(a)` takes in a matrix a and calculates its inverse as shown below.
+The inverse of a matrix is analogous to taking reciprocal of a number and multiplying by itself to get a 1, e.g. $5 * 5^{-1} = 1$. Let's see how to get inverse of a matrix in Numpy. `numpy.linalg.inv(a)` takes in a matrix *A* and calculates its inverse as shown below.
 
 ```python
 A = np.array([[4,2,1],[4,8,3],[1,1,0]])
@@ -118,7 +118,7 @@ A_product
 # Code here 
 ```
 
-Note that this was meant to return the identity matrix. You have 1s along major diagonal, but the float operations returned not zeros but numbers very close to zero off-diagonal. Numpy has a `np.matrix.round` function to convert each element of above matrix into a decimal form. 
+Note that this was meant to return the identity matrix. You have 1s along major diagonal, but the float operations returned not zeros but numbers very close to zero off-diagonal. Numpy has a `np.matrix.round` function to convert each element of the above matrix into a decimal form. 
 
 ```python
 np.matrix.round(A_product)
@@ -129,11 +129,11 @@ np.matrix.round(A_product)
 # Code here 
 ```
 
-This looks more like the identity matrix that we saw earlier. The negative signs remain after rounding off as the original small values were negative. This, however, wont effect computation in any way. 
+This looks more like the identity matrix that we saw earlier. The negative signs remain after rounding off as the original small values were negative. This, however, won't affect computation in any way. 
 
 ## Why Do We Need an Inverse?
 
-You need an inverse, because with matrices you can't divide! **There is no concept of dividing by a matrix**. However, you can multiply by an inverse, which achieves the same thing.
+You need an inverse because with matrices you can't divide! **There is no concept of dividing by a matrix**. However, you can multiply by an inverse, which achieves the same thing.
 
 Imagine you want to share 10 apples with 2 people.
 
@@ -151,11 +151,11 @@ It would've been great if you could divide both sides by $A$ to get $X = B / A$,
 
 > $ A^{-1} \cdot A \cdot X = A^{-1} \cdot B$
 
-From above , we that A . A<sup>-1</sup> = I, so:
+From above, we that A . A<sup>-1</sup> = I, so:
 
 > $I \cdot X = A^{-1} \cdot B$
 
-We can remove I (because multiplying with identity matrix doesn't change a matrix). so:
+We can remove I (because multiplying with the identity matrix doesn't change a matrix). so:
 
 > $X = A^{-1} \cdot B$
 
