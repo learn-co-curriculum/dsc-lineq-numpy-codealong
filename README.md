@@ -3,24 +3,28 @@
 
 ## Introduction
 
-In this lesson, you'll learn how to solve a system of linear equations using matrix algebra and Numpy.  You'll learn about the identity matrix and inverse matrices, which have some unique properties that can be used to solve for unknown values in systems of linear equations. Next, you'll discover how to create an identity matrix and calculate the inverse of a matrix in Python and Numpy. 
+In this lesson, you'll learn how to solve a system of linear equations using matrix algebra and Numpy.  You'll also learn about the identity matrix and inverse matrices, which have some unique properties that can be used to solve for unknown values in systems of linear equations. You'll also learn how to create these using Numpy. 
 
 ## Objectives
 
 You will be able to:
 
-* Understand and describe identity matrix and its role in linear equations
-* Calculate Inverse of a matrix in order to solve linear problems
-* Use the Matrix algebra and Numpy skills to solve a system of linear equations
+- Define the identity matrix and its dot product 
+- Define the inverse of a matrix 
+- Calculate the inverse of a matrix in order to solve linear problems 
+- Use matrix algebra and Numpy to solve a system of linear equations given a real-life example 
 
-## Identity Matrix
+
+
+## Identity matrix
 
 An identity matrix is a matrix whose dot product with another matrix $M$ equals the same matrix $M$.
 
-The identity matrix is a square matrix which contains **1s** along the major diagonal (from the top left to the bottom right), while all its other entries are **0s**. The main diagonal is highlighted in the image below.
+The identity matrix is a square matrix which contains **1**s along the major diagonal (from the top left to the bottom right), while all its other entries are **0**s. The main diagonal is highlighted in the image below: 
+
 <img src="images/diagonal.png" width="250">
 
-An identity matrix with the same $(3 \times 3)$-shape is containing all 1s along this diagonal and 0s everywhere else as shown below:
+An identity matrix with the same $(3 \times 3)$-shape contains all **1**s along this diagonal and **0**s everywhere else as shown below:
 
 $$
   \left[ {\begin{array}{ccc}
@@ -31,12 +35,12 @@ $$
 $$
 
 
-This would be called a $(3 \times 3)$ Identity matrix. The $(n \times n)$ Identity matrix is usually denoted by $I_n$ which is a matrix with $n$ rows and $n$ columns. Other examples include $(2 \times 2)$, $(4 \times 4)$ Identity matrices, etc. 
+This would be called a $(3 \times 3)$ identity matrix. The $(n \times n)$ identity matrix is usually denoted by $I_n$ which is a matrix with $n$ rows and $n$ columns. 
+
+The identity matrix is also called the *unit matrix* or *elementary matrix*.
 
 
-The identity Matrix is also called the Unit Matrix or Elementary Matrix.
-
-### Dot-Product of a Matrix and its Identity Matrix
+### Dot product of a matrix and its identity matrix
 
 Let's try to multiply a matrix with its identity matrix and check the output. Let's start with the coefficient matrix from the previous problem:
 
@@ -56,7 +60,7 @@ $$
   \end{array} } \right]
 $$
 
-Let's take the dot-product for these two matrices as shown below:
+The dot product for these two matrices can be calculated as:
 ```python
 import numpy as np
 A = np.array([[2,1],[3,4]])
@@ -70,7 +74,7 @@ print('\n', A.dot(I))
 # Code here 
 ```
 
-You see that the dot-product of any matrix and the appropriate identity matrix is always the original matrix, regardless of the order in which the multiplication was performed! In other words, 
+You see that the dot product of any matrix and the appropriate identity matrix is always the original matrix, regardless of the order in which the multiplication was performed! In other words, 
 
 > $ A \cdot I = I \cdot A = A $
 
@@ -85,18 +89,18 @@ print(np.identity(5, dtype=int))
 # Code here 
 ```
 
-## Inverse Matrix
+## Inverse matrix
 
-The *Inverse* of a square matrix *A*, sometimes called a *reciprocal matrix*, is a matrix $A^{-1}$such that
+The *inverse* of a square matrix *A*, sometimes called a *reciprocal matrix*, is a matrix $A^{-1}$such that
 
 > $A \cdot A^{-1} = I$
 
-where $I$ is the Identity matrix. 
+where $I$ is the identity matrix 
 
-The inverse of a matrix is analogous to taking reciprocal of a number and multiplying by itself to get a 1, e.g. $5 * 5^{-1} = 1$. Let's see how to get inverse of a matrix in Numpy. `numpy.linalg.inv(a)` takes in a matrix *A* and calculates its inverse as shown below.
+The inverse of a matrix is analogous to taking reciprocal of a number and multiplying by itself to get a 1, e.g. $5 * 5^{-1} = 1$. Let's see how to get inverse of a matrix in NumPy. `numpy.linalg.inv(a)` takes in a matrix *A* and calculates its inverse as shown below: 
 
 ```python
-A = np.array([[4,2,1],[4,8,3],[1,1,0]])
+A = np.array([[4, 2, 1],[4, 8, 3],[1, 1, 0]])
 A_inv = np.linalg.inv(A)
 print(A_inv)
 ```
@@ -106,10 +110,10 @@ print(A_inv)
 # Code here 
 ```
 
-This is great. So according to the principle shown above, if we multiply $A$ with $A^{-1}$, we should get an identity matrix $I$ in the output. 
+This is great. So according to the principle shown above, if we multiply $A$ with $A^{-1}$, we should get an identity matrix $I$ as the output: 
 
 ```python
-A_product = np.dot(A,A_inv)
+A_product = np.dot(A, A_inv)
 A_product
 ```
 
@@ -118,7 +122,7 @@ A_product
 # Code here 
 ```
 
-Note that this was meant to return the identity matrix. You have 1s along major diagonal, but the float operations returned not zeros but numbers very close to zero off-diagonal. Numpy has a `np.matrix.round` function to convert each element of the above matrix into a decimal form. 
+Note that the expected output was an identity matrix. Although you have **1**s along the major diagonal, the float operations returned not zeros but numbers very close to zero off-diagonal. Numpy has a `np.matrix.round()` function to convert each element of the above matrix into a decimal form. 
 
 ```python
 np.matrix.round(A_product)
@@ -131,21 +135,21 @@ np.matrix.round(A_product)
 
 This looks more like the identity matrix that we saw earlier. The negative signs remain after rounding off as the original small values were negative. This, however, won't affect computation in any way. 
 
-## Why Do We Need an Inverse?
+## Why do we need an inverse?
 
-You need an inverse because with matrices you can't divide! **There is no concept of dividing by a matrix**. However, you can multiply by an inverse, which achieves the same thing.
+You need an inverse because you can't perform division operations with matrices! **There is no concept of dividing by a matrix**. However, you can multiply by an inverse, which achieves the same thing.
 
 Imagine you want to share 10 apples with 2 people.
 
 You can divide 10 by 2, or you can take the reciprocal of 2 (which is 0.5), so the answer is:
 
-$10 \times 0.5 = 5$ means They get 5 apples each.
+$10 \times 0.5 = 5$ - which means they get 5 apples each.
 
 We use the very same idea here and this can be used to solve a system of linear equation in the problems we saw earlier in the section where: 
 
 > $A \cdot X = B$ (remember $A$ is the matrix of coefficients, $X$ is the unknown variable and $B$ is the output)
 
-Say you want to find matrix $X$, when you already know matrix $A$ and $B$:
+Say you want to find matrix $X$, when you already know matrices $A$ and $B$:
 
 It would've been great if you could divide both sides by $A$ to get $X = B / A$, but remember that you can't divide. You can obtain this if you multiply both sides by $A^{-1}$, as shown below:
 
@@ -161,11 +165,11 @@ We can remove I (because multiplying with the identity matrix doesn't change a m
 
 And there we have it, our answer. 
 
-## Solve a System of Equations with Matrix Algebra. 
+## Solve a system of equations with matrix algebra 
 
-Now that you know everything about converting a simple real world problem into matrix format, and steps to solve the problem, let's try it out with the apples and bananas problem from very first lesson. let's give a quick recap of the problem:
+Now that you know everything about converting a simple real world problem into matrix format, and steps to solve the problem, let's try it out with the apples and bananas problem:
 
-Let's say you go to a market and buy 2 apples and 1 banana. For this you end up paying 35 pence. If you denote apples by $a$ and bananas  by $b$, the relationship between bought items bought and price paid can be written down as:
+Let's say you go to a market and buy 2 apples and 1 banana. For this you end up paying 35 pence. If you denote apples by $a$ and bananas by $b$, the relationship between bought items bought and price paid can be written down as:
 
 $2a + b = 35$  - (Eq. A)
 
@@ -177,11 +181,11 @@ As seen before, this is what that looks like in matrix notation:
 
 <img src="images/ab.png" width = "280">
 
-So first we'll need to calculate the inverse of the square matrix containing coefficient values.
+So first we'll need to calculate the inverse of the square matrix containing coefficient values: 
 ```python
 # Define A and B 
 A = np.matrix([[2, 1], [3, 4]])
-B = np.matrix([35,65])
+B = np.matrix([35, 65])
 
 # Take the inverse of Matrix A 
 A_inv = np.linalg.inv(A)
@@ -227,7 +231,7 @@ You can see that the prices of apples and bananas have been calculated as 15p pe
 The dot product of $A$ and $X$ should give matrix $B$. Let's try it:
 ```python
 print(A.dot(X))
-print (B)
+print(B)
 ```
 
 
@@ -239,11 +243,11 @@ Success!
 
 **You can also use `numpy.linalg.solve()` to solve a system of linear equations!**
 
-Numpy has a built in function to solve such equations as `numpy.linalg.solve(a,b)` which takes in matrices in the correct orientation, and gives the answer by calculating the inverse. Here is how to use it. 
+Numpy has a built-in function to solve such equations as `numpy.linalg.solve(a, b)` which takes in matrices in the correct orientation, and gives the answer by calculating the inverse. Here is how to use it. 
 
 ```python
 # Use Numpy's built in function solve() to solve linear equations
-x = np.linalg.solve(A,B)
+x = np.linalg.solve(A, B)
 x
 ```
 
@@ -255,8 +259,8 @@ x
 ## Further Reading
 
 * [Youtube: Solving System of Linear Equations using Python](https://youtu.be/AqIrdW2-K6k)
-* [Inverse of a Matrix](http://www.mathwords.com/i/inverse_of_a_matrix.htm)
-* [Don't invert that Matrix](https://www.johndcook.com/blog/2010/01/19/dont-invert-that-matrix/)
+* [Inverse of a matrix](http://www.mathwords.com/i/inverse_of_a_matrix.htm)
+* [Don't invert that matrix](https://www.johndcook.com/blog/2010/01/19/dont-invert-that-matrix/)
 
 ## Summary
 
