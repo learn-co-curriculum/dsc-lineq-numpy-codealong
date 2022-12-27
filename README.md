@@ -1,4 +1,3 @@
-
 # Solving Systems of Linear Equations with NumPy - Code Along
 
 ## Introduction
@@ -184,8 +183,8 @@ As seen before, this is what that looks like in matrix notation:
 So first we'll need to calculate the inverse of the square matrix containing coefficient values: 
 ```python
 # Define A and B 
-A = np.matrix([[2, 1], [3, 4]])
-B = np.matrix([35, 65])
+A = np.array([[2, 1], [3, 4]])
+B = np.array([35, 65])
 
 # Take the inverse of Matrix A 
 A_inv = np.linalg.inv(A)
