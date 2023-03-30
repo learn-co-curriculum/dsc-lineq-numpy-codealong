@@ -70,7 +70,7 @@ print('\n', A.dot(I))
 
 
 ```python
-# Code here 
+# Code here
 ```
 
 You see that the dot product of any matrix and the appropriate identity matrix is always the original matrix, regardless of the order in which the multiplication was performed! In other words, 
@@ -85,7 +85,7 @@ print(np.identity(5, dtype=int))
 
 
 ```python
-# Code here 
+# Code here
 ```
 
 ## Inverse matrix
@@ -106,7 +106,7 @@ print(A_inv)
 
 
 ```python
-# Code here 
+# Code here
 ```
 
 This is great. So according to the principle shown above, if we multiply $A$ with $A^{-1}$, we should get an identity matrix $I$ as the output: 
@@ -118,7 +118,7 @@ A_product
 
 
 ```python
-# Code here 
+# Code here
 ```
 
 Note that the expected output was an identity matrix. Although you have **1**s along the major diagonal, the float operations returned not zeros but numbers very close to zero off-diagonal. Numpy has a `np.matrix.round()` function to convert each element of the above matrix into a decimal form. 
@@ -129,7 +129,7 @@ np.matrix.round(A_product)
 
 
 ```python
-# Code here 
+# Code here
 ```
 
 This looks more like the identity matrix that we saw earlier. The negative signs remain after rounding off as the original small values were negative. This, however, won't affect computation in any way. 
@@ -193,7 +193,7 @@ A_inv
 
 
 ```python
-# Code here 
+# Code here
 ```
 
 You can now take a dot product of `A_inv` and `B`. Also, as you want the output in the vector format (containing one column and two rows), you would need to transpose the matrix `B` to satisfy the multiplication rule you saw previously.
@@ -210,7 +210,7 @@ B
 
 
 ```python
-# Code here 
+# Code here
 ```
 
 Now, you can easily calculate $X$ as below:
@@ -222,7 +222,7 @@ X
 
 
 ```python
-# Code here 
+# Code here
 ```
 
 You can see that the prices of apples and bananas have been calculated as 15p per apple and 5p per banana, and these values satisfy both equations. Great!
@@ -235,7 +235,7 @@ print(B)
 
 
 ```python
-# Code here 
+# Code here
 ```
 
 Success!
@@ -252,7 +252,7 @@ x
 
 
 ```python
-# Code here 
+# Code here
 ```
 
 ## Further Reading
